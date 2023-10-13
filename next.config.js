@@ -1,4 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = nextConfig
+module.exports = {
+    generateEtags: false,
+    onDemandEntries: {
+        maxInactiveAge: 25 * 1000,
+    },
+};
