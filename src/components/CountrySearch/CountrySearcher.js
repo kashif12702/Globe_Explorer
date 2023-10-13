@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Converter from './Converter';
 
-const CountrySearch = () => {
+const CountrySearcher = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [searchResults, setSearchResults] = useState([]);
     useEffect(() => {
@@ -88,5 +88,5 @@ const CountrySearch = () => {
     );
 };
 
-export default CountrySearch;
+export default CountrySearcher;
 // http://data.fixer.io/api/latest?access_key=fad90b0caf5ad20cb582260b6b72031f&base=GBP&symbols=USD,AUD,CAD,PLN,MXN

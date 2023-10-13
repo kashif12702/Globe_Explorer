@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import Index from '../components/CountrySearch'
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 import Navbar from './../components/Navbar'
+import CountrySearcher from '../components/CountrySearch/CountrySearcher';
 
 const dashboard = () => {
     const router = useRouter();
@@ -14,7 +14,7 @@ const dashboard = () => {
     return (
         <>
             <Navbar />
-            <Index />
+            <CountrySearcher />
         </>
     )
 }
