@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Converter from './Converter';
+import ConverterForm from './ConverterForm';
 
 const CountrySearcher = () => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -42,7 +42,11 @@ const CountrySearcher = () => {
         ));
 
     }
-
+    const converter = (data) => {
+        return Object.entries(data).map(([currencyCode, currencyInfo]) => {
+            <ConverterForm currencyCode={currencyCode} currencyInfo={currencyInfo} />
+        })
+    }
 
     return (
         <main className='w-[95%] mx-auto mt-20'>
@@ -82,7 +86,7 @@ const CountrySearcher = () => {
                                 </td>
                                 <td className='py-4 px-8 b-2'>
                                     <ul>
-                                        <Converter data={result.currencies} />
+                                        {converter(result.currencies)}
                                     </ul>
                                 </td>
                                 <td>
