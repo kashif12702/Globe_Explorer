@@ -28,7 +28,12 @@ const CountrySearcher = () => {
         }
         setSearchQuery("")
     };
-
+    const removeHandle = (name) => {
+        const sessionResults = JSON.parse(sessionStorage.getItem('searchResults'))
+        const updSessionResults = sessionResults.filter((i) => { return i.name !== name })
+        sessionStorage.setItem('searchResults', JSON.stringify(updSessionResults));
+        setSearchResults(updSessionResults);
+    }
     const allCurr = (data) => {
         return Object.entries(data).map(([currencyCode, currencyInfo]) => (
             <li className='my-5' key={currencyCode}>
@@ -57,10 +62,11 @@ const CountrySearcher = () => {
                 <table>
                     <thead>
                         <tr className='bg-gray-200'>
-                            <td className='py-4 px-8 b-2 border-r-[1px] border-gray-400 text-lg font-semibold'>Name</td>
-                            <td className='py-4 px-8 b-2 border-r-[1px] border-gray-400 text-lg font-semibold'>Population</td>
-                            <td className='py-4 px-8 b-2 text-lg font-semibold'>Currencies / EUR</td>
-                            <td className='py-4 px-8 b-2 text-lg font-semibold'>converter</td>
+                            <td className='py-4 px-8 b-2 border-r-[1px] border-gray-300 text-lg font-semibold'>Name</td>
+                            <td className='py-4 px-8 b-2 border-r-[1px] border-gray-300 text-lg font-semibold'>Population</td>
+                            <td className='py-4 px-8 b-2 border-r-[1px] border-gray-300 text-lg font-semibold'>Currencies / EUR</td>
+                            <td className='py-4 px-8 b-2 border-r-[1px] border-gray-300 text-lg font-semibold'>converter</td>
+                            <td className='py-4 px-8 b-2 text-lg font-semibold'>Remove</td>
 
                         </tr>
                     </thead>
@@ -78,6 +84,9 @@ const CountrySearcher = () => {
                                     <ul>
                                         <Converter data={result.currencies} />
                                     </ul>
+                                </td>
+                                <td>
+                                    <h2 onClick={() => { removeHandle(result.name) }} className='text-center hover:underline text-blue-500 cursor-pointer'>delete</h2>
                                 </td>
                             </tr>
                         ))}
