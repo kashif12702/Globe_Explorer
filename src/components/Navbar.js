@@ -13,7 +13,7 @@ const Navbar = () => {
                                 Globe Explorer
                             </h2>
                         </Link>
-                        {Cookies.get('token') === "undefined"
+                        {typeof Cookies.get('token') === 'undefined'
                             ?
                             <Link href="/login">
                                 <button className='white-button rounded'>Login</button>

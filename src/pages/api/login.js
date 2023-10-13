@@ -1,8 +1,7 @@
-// pages/api/auth.js
 import jwt from 'jsonwebtoken';
 
 const users = [
-    { id: 1, username: 'user1', password: '123456' },
+    { id: 1, username: 'user', password: '123456' },
 ];
 
 const jwtSecret = 'your-secret-key';

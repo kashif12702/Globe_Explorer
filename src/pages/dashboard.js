@@ -11,7 +11,6 @@ const dashboard = () => {
             router.replace("/login")
         }
     }, [])
-    console.log(typeof Cookies.get('token') === 'undefined')
     return (
         <>
             <Navbar />

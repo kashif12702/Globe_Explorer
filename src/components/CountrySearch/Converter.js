@@ -6,9 +6,7 @@ const Converter = ({ data }) => {
         const [currVal, setCurrVal] = useState(0);
 
         useEffect(() => {
-            // Parse the input value as a float
             const eurValue = parseFloat(eurVal);
-            // Check if the input is a valid number
             if (!isNaN(eurValue)) {
                 setCurrVal(eurValue * currencyInfo.eurRate);
             } else {
@@ -29,7 +27,7 @@ const Converter = ({ data }) => {
                 <input
                     placeholder='Curr'
                     disabled={true}
-                    value={currVal.toFixed(2)} // Format to two decimal places
+                    value={currVal.toFixed(2)}
                     className='border-[1px] rounded-lg m-2 p-1 w-[100px]'
                 />
             </li>
