@@ -44,7 +44,7 @@ const CountrySearcher = () => {
     }
     const converter = (data) => {
         return Object.entries(data).map(([currencyCode, currencyInfo]) => {
-            <ConverterForm currencyCode={currencyCode} currencyInfo={currencyInfo} />
+            return <ConverterForm currencyCode={currencyCode} currencyInfo={currencyInfo} />
         })
     }
 
