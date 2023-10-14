@@ -62,8 +62,8 @@ const CountrySearcher = () => {
                 <button className='pink-button' onClick={handleAdd}>Add</button>
             </section>
             <h2 className='secondary-heading text-center'>Search Results</h2>
-            <section className='flex items-center justify-center'>
-                <table>
+            <section className='overflow-y-scroll'>
+                <table className='mx-auto'>
                     <thead>
                         <tr className='bg-gray-200'>
                             <td className='py-4 px-8 b-2 border-r-[1px] border-gray-300 text-lg font-semibold'>Name</td>
@@ -76,7 +76,7 @@ const CountrySearcher = () => {
                     </thead>
                     <tbody>
                         {searchResults.map((result, index) => (
-                            <tr key={index} className='border-b-[1px]'>
+                            <tr key={index} className='border-b-[1px] text-sm lg:text-base'>
                                 <td className='py-4 px-8 b-2'>{result.name}</td>
                                 <td className='py-4 px-8 b-2 text-center'>{result.population}</td>
                                 <td className='py-4 px-8 b-2'>
@@ -102,4 +102,3 @@ const CountrySearcher = () => {
 };
 
 export default CountrySearcher;
-// http://data.fixer.io/api/latest?access_key=fad90b0caf5ad20cb582260b6b72031f&base=GBP&symbols=USD,AUD,CAD,PLN,MXN

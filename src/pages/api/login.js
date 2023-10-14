@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 
 const users = [
-    { id: 1, username: 'user', password: '123456' },
+    { id: 1, username: 'admin', password: '123456' },
 ];
 
 const jwtSecret = 'your-secret-key';
